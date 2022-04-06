@@ -1,5 +1,6 @@
 const commandLineArgs = require("command-line-args");
 const commandLineUsage = require("command-line-usage");
+const crawler = require("./crawler");
 
 const optionDefinitions = [
   {
@@ -42,4 +43,4 @@ if (options.help || !options.url) {
 const url = options.url;
 const workers = options.workers || 1;
 
-console.log(url, workers);
+crawler.crawl(url, workers);

@@ -4,8 +4,11 @@
   "description": "Simple parallel URL crawler",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Ganesh Gunasegaran <me@itsgg.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
 }

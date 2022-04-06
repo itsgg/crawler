@@ -14,7 +14,7 @@ const extractLinks = (link, text) => {
   return [
     ...new Set(
       $("a")
-        .map((_, a) => url.resolve(link, $(a).attr("href")))
+        .map((_, a) => url.resolve(link, $(a).attr("href")).replace(/\/$/, ""))
         .toArray()
         .filter((currentLink) => getHostname(link) === getHostname(currentLink))
     ),

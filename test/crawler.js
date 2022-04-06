@@ -1,4 +1,5 @@
-let expect = require("chai").expect;
+const expect = require("chai").expect;
+const stdout = require("test-console").stdout;
 
 const crawler = require("../crawler");
 
@@ -24,9 +25,23 @@ describe("Crawler", () => {
           </body>
         </html>`;
       expect(crawler.extractLinks("https://itsgg.com", text)).to.deep.equal([
-        "https://itsgg.com/",
+        "https://itsgg.com",
         "https://itsgg.com/about",
         "https://itsgg.com/contact",
+      ]);
+    });
+  });
+
+  describe("#crawl()", () => {
+    it("should recursively print links", async () => {
+      const output = await stdout.inspectAsync(async () => {
+        await crawler.crawl("https://itsgg.com", 4);
+      });
+      console.log(output);
+      expect(output).to.deep.equal([
+        "https://itsgg.com\n",
+        "https://itsgg.com/about\n",
+        "https://itsgg.com/site/news/2022/01/29/genesis.html\n",
       ]);
     });
   });

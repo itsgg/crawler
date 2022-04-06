@@ -1,0 +1,11 @@
+{
+  "name": "crawl",
+  "version": "1.0.0",
+  "description": "Simple parallel URL crawler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ganesh Gunasegaran <me@itsgg.com>",
+  "license": "ISC"
+}

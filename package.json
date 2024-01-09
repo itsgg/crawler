@@ -14,7 +14,7 @@
     "test-console": "^2.0.0"
   },
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.10",
     "command-line-args": "^5.2.1",
     "command-line-usage": "^6.1.2"
